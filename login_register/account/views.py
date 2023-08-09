@@ -21,9 +21,9 @@ def register(request):
 		password2 = request.POST['password2']
 
 		if password1 == password2:
-			user = User.objects.create(first_name=first_name, last_name=last_name, username=username, email=email, password=password1)
+			user = User.objects.create_user(first_name=first_name, last_name=last_name, username=username, email=email, password=password1)
 			if user:
-				user.set_password(password1)
+				# user.set_password(password1)
 				user.save()
 				messages = 'User successfully registered!!'
 				return redirect('login')
