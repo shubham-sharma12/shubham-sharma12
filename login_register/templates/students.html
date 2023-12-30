@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <h3>Welcome <strong>{{user.first_name.title}}</strong><h3>
+            <h3>Welcome <strong>{{request.user.username.title}}</strong><h3>
+                <p>your role is Student</p>
+                {% for msg in messages %}
+                    <p class="alert-{{ msg.tags }}">{{msg}}</p>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
